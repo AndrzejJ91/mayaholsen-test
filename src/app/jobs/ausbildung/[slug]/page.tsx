@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { datas } from "./data";
 import { Cpu, Settings, Wrench, Zap } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const iconMap = {
   Cpu: <Cpu className="w-10 h-10 text-red-700" />,
@@ -26,7 +27,7 @@ export default function AusbildungDetail({ params }: { params: { slug: string } 
           <div className="p-4 bg-red-50 inline-block rounded-lg">{icon}</div>
           <h1 className="text-3xl font-bold text-gray-900">{ausbildung.title}</h1>
           <p className="text-gray-700">{ausbildung.intro}</p>
-          <img src={ausbildung.image} alt={ausbildung.title} className="rounded shadow mt-4" />
+          <Image src={ausbildung.image} alt={ausbildung.title} className="rounded shadow mt-4" />
         </div>
 
         {/* RIGHT COLUMN */}

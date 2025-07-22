@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
@@ -38,7 +39,7 @@ export function Header() {
     >
       <div className="w-full px-[15%] py-4 flex items-center justify-start">
         <Link href="/">
-          <img
+          <Image
             src="/logo.png"
             alt="logo"
             className="h-12 sm:h-16 w-auto object-contain"

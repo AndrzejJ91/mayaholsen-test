@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import JobBoard from "./JobBoard";
 import Ausbildung from "./ApprenticeshipBoard";
+import Image from "next/image";    
 
 const benefits = [
     {
@@ -79,7 +80,7 @@ export default function Jobs() {
             <section className="grid grid-cols-1 md:grid-cols-2 py-24 px-6 md:px-16 gap-12 bg-white fade-slide-down">
                 {/* Mniejsze zdjęcie */}
                 <div className="w-full max-h-[400px] overflow-hidden rounded-lg shadow-md">
-                    <img
+                    <Image
                         src="/jobs/jobs.jpg"
                         alt="Karriere bei Meyer-Holsen"
                         className="w-full h-full object-cover"

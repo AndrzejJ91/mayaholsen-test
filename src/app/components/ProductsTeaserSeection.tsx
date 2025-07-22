@@ -3,6 +3,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Image from "next/image";
 
 export default function ProductTeaser() {
   const products = [
@@ -42,7 +43,7 @@ export default function ProductTeaser() {
               <p className="text-sm text-gray-600 mb-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, reiciendis.
               </p>
-              <img
+              <Image
                 src={product.img}
                 alt={product.title}
                 className="w-48 h-auto object-contain rounded-md hover:scale-105 transition-transform duration-300 mb-4"

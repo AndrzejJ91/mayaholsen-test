@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const featuresData = [
     {
         title: "Dachtritte",
@@ -35,7 +37,7 @@ export default function Products() {
                             className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 transition hover:shadow-lg hover:scale-[1.02] flex flex-col min-h-[60px]"
                         >
                             <div className="w-full aspect-[5/4] overflow-hidden">
-                                <img
+                                <Image
                                     src={data.image}
                                     alt={data.title}
                                     className="w-full h-full object-cover"

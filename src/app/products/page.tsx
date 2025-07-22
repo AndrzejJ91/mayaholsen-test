@@ -2,6 +2,7 @@
 
 import dachziegelData from "./products";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function DachziegelGrid() {
   return (
@@ -70,7 +71,7 @@ export default function DachziegelGrid() {
         className="bg-gray-100 rounded-xl shadow p-6 flex flex-col hover:shadow-xl hover:ring-1 ring-black/10 transition-all"
       >
         <div className="bg-white p-2 rounded mb-4 shadow-sm overflow-hidden">
-          <img
+          <Image
             src={product.img}
             alt={product.title}
             className="w-full h-48 object-contain rounded transition-transform duration-300 hover:scale-105"

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { advisors } from "../../data/advisors";
 
@@ -24,7 +25,7 @@ export default function AdvaisorSection() {
         key={person.email}
         className="bg-white p-4 rounded shadow text-sm text-center"
       >
-        <img
+        <Image
           src={person.image}
           alt={person.name}
           className="w-24 h-24 rounded-full mx-auto mb-3 object-cover border"

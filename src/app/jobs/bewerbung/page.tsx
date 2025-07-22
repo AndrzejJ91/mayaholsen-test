@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function BewerbungPage() {
     const params = useSearchParams();
     const stelle = params.get("stelle") || "Allgemeine Bewerbung";
-    const [form, setForm] = useState({});
+    
 
     const inputClass =
         "w-full bg-gray-50 border border-gray-300 rounded-md pl-3 pr-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 transition";

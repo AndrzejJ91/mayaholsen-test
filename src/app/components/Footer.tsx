@@ -1,4 +1,7 @@
 "use client";
+import Image from "next/image";
+
+
 
 export default function Footer() {
   return (
@@ -7,7 +10,7 @@ export default function Footer() {
         {/* Logo + opis */}
         <div className="col-span-1 md:col-span-2 flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="Mayaholsen Logo" className="h-8 w-auto" />
+            <Image src="/logo.png" alt="Mayaholsen Logo" className="h-8 w-auto" />
             <span className="text-lg font-bold text-gray-800">Mayaholsen</span>
           </div>
           <p className="text-sm text-gray-600">
@@ -15,13 +18,13 @@ export default function Footer() {
           </p>
           <div className="flex gap-4 mt-4">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <img src="/icons/facebook.png" alt="Facebook" className="h-6 w-6" />
+              <Image src="/icons/facebook.png" alt="Facebook" className="h-6 w-6" />
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <img src="/icons/instagram.png" alt="Instagram" className="h-6 w-6" />
+              <Image src="/icons/instagram.png" alt="Instagram" className="h-6 w-6" />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <img src="/icons/linkedin.png" alt="LinkedIn" className="h-6 w-6" />
+              <Image src="/icons/linkedin.png" alt="LinkedIn" className="h-6 w-6" />
             </a>
           </div>
         </div>

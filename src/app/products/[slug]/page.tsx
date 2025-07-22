@@ -7,6 +7,7 @@ import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css';
 import Calc from "./Calc";
 import OdereForm from "./OrderForm";
+import Image from "next/image";
 
 export default function TileDetailPage({ params }: { params: { slug: string } }) {
   const product = dachziegelData.find((p) => p.slug === params.slug);
@@ -50,7 +51,7 @@ export default function TileDetailPage({ params }: { params: { slug: string } })
             {/* Główne zdjęcie */}
             <div className="w-[300px] h-[380px] bg-white rounded-md shadow overflow-hidden mb-3 relative group">
               <Zoom>
-                <img
+                <Image
                   src={
                     selectedIndex >= 0
                       ? product.colors?.[selectedIndex]?.img || product.img

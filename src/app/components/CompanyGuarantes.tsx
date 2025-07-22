@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import clsx from "clsx";
 
@@ -52,7 +52,7 @@ export default function CompanyGuarantees() {
             }}
           >
             <div>
-              <img src={item.img} alt="" className="w-20 h-20 mb-6" />
+              <Image src={item.img} alt="" className="w-20 h-20 mb-6" />
               <h3 className="text-base font-semibold uppercase mb-4">
                 {item.title}
               </h3>

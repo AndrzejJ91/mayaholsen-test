@@ -19,7 +19,9 @@ export default function HeroVideoSequence() {
             setShowOverlay(true)
         },500);
 
-    });
+        return () => clearTimeout(timer)
+
+    },[]);
 
     const handleEnded = () => {
 

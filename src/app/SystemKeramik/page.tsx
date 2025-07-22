@@ -2,6 +2,7 @@
 
 import { Check } from "lucide-react";
 import Products from "./products";
+import Image from "next/image";
 
 export default function SystemKeramik() {
   return (
@@ -10,7 +11,7 @@ export default function SystemKeramik() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 px-4 md:px-8">
         {/* Obrazek */}
         <div className="w-full h-96">
-          <img
+          <Image
             src="/system/system.jpeg"
             alt="Systemkeramik"
             className="w-full h-full object-cover rounded-2xl shadow-md"

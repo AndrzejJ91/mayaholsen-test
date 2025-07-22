@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useInView } from "react-intersection-observer";
 import clsx from "clsx";
+import Image from "next/image";
 
 const features = [
   {
@@ -101,7 +102,7 @@ export default function WarumWir() {
               : "opacity-0 translate-y-10"
           )}
         >
-          <img
+          <Image
             src="/warumWir/img1.jpeg"
             alt="Ziegel Dach"
             className="w-full h-auto rounded-lg shadow-md"
@@ -119,7 +120,7 @@ export default function WarumWir() {
               : "opacity-0 translate-y-10"
           )}
         >
-          <img
+          <Image
             src="/warumWir/img2.jpg"
             alt="Haus Dach"
             className="w-full h-full object-cover rounded-lg shadow-sm"

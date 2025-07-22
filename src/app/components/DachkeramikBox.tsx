@@ -1,9 +1,11 @@
 "use client";
+import Image from "next/image";
+
 
 export default function DachkeramikBox() {
   return (
     <div className="w-full md:w-[400px] bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all cursor-pointer">
-      <img
+      <Image
         src="/foto-hero.jpg"
         alt="hero-foto"
         className="w-full h-48 object-cover rounded-lg mb-4"
