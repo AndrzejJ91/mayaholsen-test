@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import JobBoard from "./JobBoard";
 import Ausbildung from "./ApprenticeshipBoard";
-import Image from "next/image";    
+import Image from "next/image";
 
 const benefits = [
     {
@@ -83,6 +83,8 @@ export default function Jobs() {
                     <Image
                         src="/jobs/jobs.jpg"
                         alt="Karriere bei Meyer-Holsen"
+                        width={1200} // typowa szerokość dla pełnej sekcji
+                        height={400} // bo `max-h-[400px]`
                         className="w-full h-full object-cover"
                     />
                 </div>

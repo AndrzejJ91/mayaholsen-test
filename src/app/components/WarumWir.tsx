@@ -105,6 +105,8 @@ export default function WarumWir() {
           <Image
             src="/warumWir/img1.jpeg"
             alt="Ziegel Dach"
+            width={700}
+            height={450}
             className="w-full h-auto rounded-lg shadow-md"
           />
         </div>
@@ -123,6 +125,8 @@ export default function WarumWir() {
           <Image
             src="/warumWir/img2.jpg"
             alt="Haus Dach"
+            width={700}
+            height={500}
             className="w-full h-full object-cover rounded-lg shadow-sm"
           />
         </div>

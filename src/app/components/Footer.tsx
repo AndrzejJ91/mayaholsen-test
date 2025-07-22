@@ -10,7 +10,13 @@ export default function Footer() {
         {/* Logo + opis */}
         <div className="col-span-1 md:col-span-2 flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            <Image src="/logo.png" alt="Mayaholsen Logo" className="h-8 w-auto" />
+            <Image
+              src="/logo.png"
+              alt="Mayaholsen Logo"
+              width={32} // odpowiada mniej więcej h-8 (8 * 4px = 32px)
+              height={32}
+              className="w-auto h-8"
+            />
             <span className="text-lg font-bold text-gray-800">Mayaholsen</span>
           </div>
           <p className="text-sm text-gray-600">
@@ -18,13 +24,28 @@ export default function Footer() {
           </p>
           <div className="flex gap-4 mt-4">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <Image src="/icons/facebook.png" alt="Facebook" className="h-6 w-6" />
+              <Image
+                src="/icons/facebook.png"
+                alt="Facebook"
+                width={24}
+                height={24}
+              />
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <Image src="/icons/instagram.png" alt="Instagram" className="h-6 w-6" />
+              <Image 
+                src="/icons/instagram.png" 
+                alt="Instagram" 
+                width={24}
+                height={24} 
+              />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <Image src="/icons/linkedin.png" alt="LinkedIn" className="h-6 w-6" />
+              <Image 
+                src="/icons/linkedin.png" 
+                alt="LinkedIn" 
+                width={24}
+                height={24}
+                />
             </a>
           </div>
         </div>

@@ -46,6 +46,8 @@ export default function ProductTeaser() {
               <Image
                 src={product.img}
                 alt={product.title}
+                width={192} // 48 * 4 = 192
+                height={128} // przykładowa wysokość, możesz dopasować do proporcji zdjęcia
                 className="w-48 h-auto object-contain rounded-md hover:scale-105 transition-transform duration-300 mb-4"
               />
               <button

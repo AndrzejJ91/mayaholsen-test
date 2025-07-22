@@ -7,13 +7,13 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const navLinks = [
-    { label: "Dachkeramik", href: "/products" },
-    { label: "Systemkeramik", href: "/SystemKeramik" },
-    { label: "Fasady", href: "/fasaden" },
-    { label: "Denkmalschutz", href: "/denkmal" },
-    { label: "Jobs", href: "/jobs" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Kontakt", href: "/contact" },
+  { label: "Dachkeramik", href: "/products" },
+  { label: "Systemkeramik", href: "/SystemKeramik" },
+  { label: "Fasady", href: "/fasaden" },
+  { label: "Denkmalschutz", href: "/denkmal" },
+  { label: "Jobs", href: "/jobs" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Kontakt", href: "/contact" },
 ];
 
 export function Header() {
@@ -22,15 +22,15 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-        setScrolled(window.scrollY > 10);
+      setScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
-    
-    return () => window.removeEventListener("scroll", handleScroll)
-  },[])
 
-    return (
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  return (
     <header
       className={clsx(
         "fixed top-0 left-0 w-full bg-white transition-all duration-300 z-50",
@@ -38,11 +38,12 @@ export function Header() {
       )}
     >
       <div className="w-full px-[15%] py-4 flex items-center justify-start">
-        <Link href="/">
+        <Link href="/" className="relative h-12 sm:h-16 w-[160px]">
           <Image
             src="/logo.png"
             alt="logo"
-            className="h-12 sm:h-16 w-auto object-contain"
+            fill
+            className="object-contain"
           />
         </Link>
         <nav className="hidden md:flex flex-1 justify-center gap-8 text-md text-gray-800">

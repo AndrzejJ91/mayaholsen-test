@@ -40,6 +40,8 @@ export default function Products() {
                                 <Image
                                     src={data.image}
                                     alt={data.title}
+                                    width={1000} // lub 1200 – zależnie od kontenera
+                                    height={800} // bo 5:4 proporcja (1000 * 0.8 = 800)
                                     className="w-full h-full object-cover"
                                 />
                             </div>
