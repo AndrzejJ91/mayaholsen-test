@@ -11,7 +11,6 @@ const iconMap = {
   Zap: <Zap className="w-10 h-10 text-red-700" />,
 };
 
-// ✅ Poprawiamy: async + poprawne propsy
 export default async function AusbildungDetail({
   params,
 }: {
@@ -60,8 +59,10 @@ export default async function AusbildungDetail({
   );
 }
 
-// ✅ Next.js wymaga tej funkcji do generowania ścieżek
-export async function generateStaticParams() {
+// 🔧 TO JEST KLUCZ
+type StaticParams = { slug: string };
+
+export async function generateStaticParams(): Promise<StaticParams[]> {
   return datas.map((d) => ({
     slug: d.slug,
   }));
