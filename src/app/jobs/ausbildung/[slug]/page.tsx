@@ -11,8 +11,12 @@ const iconMap = {
   Zap: <Zap className="w-10 h-10 text-red-700" />,
 };
 
-// ✅ Nie używaj FC ani zewnętrznego PageProps – tylko czysty destrukturing
-export default function AusbildungDetail({ params }: { params: { slug: string } }) {
+// ✅ Poprawiamy: async + poprawne propsy
+export default async function AusbildungDetail({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const ausbildung = datas.find((d) => d.slug === params.slug);
   if (!ausbildung) return notFound();
 
@@ -56,7 +60,7 @@ export default function AusbildungDetail({ params }: { params: { slug: string } 
   );
 }
 
-// ✅ Obowiązkowo dodaj generateStaticParams – bez tego Next.js/Vercel się wywala
+// ✅ Next.js wymaga tej funkcji do generowania ścieżek
 export async function generateStaticParams() {
   return datas.map((d) => ({
     slug: d.slug,
