@@ -3,7 +3,6 @@ import { datas } from "./data";
 import { Cpu, Settings, Wrench, Zap } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { type FC } from "react";
 
 const iconMap = {
   Cpu: <Cpu className="w-10 h-10 text-red-700" />,
@@ -12,16 +11,9 @@ const iconMap = {
   Zap: <Zap className="w-10 h-10 text-red-700" />,
 };
 
-type PageProps = {
-  params: {
-    slug: string;
-  };
-};
-
-const AusbildungDetail:FC<PageProps> = ({params}) =>{
-
+// ✅ Nie używaj FC ani zewnętrznego PageProps – tylko czysty destrukturing
+export default function AusbildungDetail({ params }: { params: { slug: string } }) {
   const ausbildung = datas.find((d) => d.slug === params.slug);
-
   if (!ausbildung) return notFound();
 
   const icon = iconMap[ausbildung.icon as keyof typeof iconMap];
@@ -29,16 +21,19 @@ const AusbildungDetail:FC<PageProps> = ({params}) =>{
   return (
     <section className="px-6 md:px-16 py-24">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-
-        {/* LEFT COLUMN */}
         <div className="space-y-4">
           <div className="p-4 bg-red-50 inline-block rounded-lg">{icon}</div>
           <h1 className="text-3xl font-bold text-gray-900">{ausbildung.title}</h1>
           <p className="text-gray-700">{ausbildung.intro}</p>
-          <Image src={ausbildung.image} alt={ausbildung.title} className="rounded shadow mt-4" />
+          <Image
+            src={ausbildung.image}
+            alt={ausbildung.title}
+            className="rounded shadow mt-4"
+            width={800}
+            height={400}
+          />
         </div>
 
-        {/* RIGHT COLUMN */}
         <div className="space-y-8">
           {ausbildung.sections.map((section, idx) => (
             <div key={idx}>
@@ -61,5 +56,9 @@ const AusbildungDetail:FC<PageProps> = ({params}) =>{
   );
 }
 
-
-export default AusbildungDetail
+// ✅ Obowiązkowo dodaj generateStaticParams – bez tego Next.js/Vercel się wywala
+export async function generateStaticParams() {
+  return datas.map((d) => ({
+    slug: d.slug,
+  }));
+}
