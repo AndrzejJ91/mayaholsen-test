@@ -11,11 +11,11 @@ const iconMap = {
   Zap: <Zap className="w-10 h-10 text-red-700" />,
 };
 
-export default async function AusbildungDetail({
-  params,
-}: {
-  params: { slug: string };
-}) {
+type Params = { slug: string };
+
+export default function AusbildungDetail(props: { params: Params }) {
+  const { params } = props;
+
   const ausbildung = datas.find((d) => d.slug === params.slug);
   if (!ausbildung) return notFound();
 
