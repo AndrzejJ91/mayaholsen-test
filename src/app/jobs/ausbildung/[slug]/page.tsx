@@ -3,6 +3,7 @@ import { datas } from "./data";
 import { Cpu, Settings, Wrench, Zap } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { type FC } from "react";
 
 const iconMap = {
   Cpu: <Cpu className="w-10 h-10 text-red-700" />,
@@ -11,7 +12,14 @@ const iconMap = {
   Zap: <Zap className="w-10 h-10 text-red-700" />,
 };
 
-export default function AusbildungDetail({ params }: { params: { slug: string } }) {
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+const AusbildungDetail:FC<PageProps> = ({params}) =>{
+
   const ausbildung = datas.find((d) => d.slug === params.slug);
 
   if (!ausbildung) return notFound();
@@ -52,3 +60,6 @@ export default function AusbildungDetail({ params }: { params: { slug: string } 
     </section>
   );
 }
+
+
+export default AusbildungDetail
