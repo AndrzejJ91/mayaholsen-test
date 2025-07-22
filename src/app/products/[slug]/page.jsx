@@ -9,7 +9,7 @@ import Calc from "./Calc";
 import OdereForm from "./OrderForm";
 import Image from "next/image";
 
-export default function TileDetailPage({ params }: { params: { slug: string } }) {
+export default function TileDetailPage({ params }) {
   const product = dachziegelData.find((p) => p.slug === params.slug);
   if (!product) return notFound();
 
@@ -18,22 +18,21 @@ export default function TileDetailPage({ params }: { params: { slug: string } })
 
   const [selectGalleryIndex, setSelectGalleryIndex] = useState(0);
   const galleryImages = product.gallery || [];
+
   return (
     <section className="max-w-6xl mx-auto px-4 py-24 fade-slide-down">
       <h1 className="text-3xl font-bold mb-6">{product.title}</h1>
 
       <div className="flex flex-col md:flex-row items-start gap-10">
-        {/* Obrazek + galeria + kolory */}
         <div className="flex flex-col items-start">
           <div className="flex gap-4">
-            {/* Miniaturki po lewej */}
             {galleryImages.length > 0 && (
               <div className="flex flex-col gap-2">
                 {galleryImages.map((img, idx) => (
                   <button
                     key={idx}
                     onClick={() => {
-                      setSelectedIndex(-1); // dezaktywuj kolor
+                      setSelectedIndex(-1);
                       setSelectGalleryIndex(idx);
                     }}
                     className={`w-16 h-16 rounded-md border ${idx === selectGalleryIndex && selectedIndex === -1 ? "ring-2 ring-black" : "border-gray-200"}`}
@@ -48,7 +47,6 @@ export default function TileDetailPage({ params }: { params: { slug: string } })
               </div>
             )}
 
-            {/* Główne zdjęcie */}
             <div className="w-[300px] h-[380px] bg-white rounded-md shadow overflow-hidden mb-3 relative group">
               <Zoom>
                 <Image
@@ -64,18 +62,16 @@ export default function TileDetailPage({ params }: { params: { slug: string } })
             </div>
           </div>
 
-          {/* Kolory pod spodem */}
           <div className="flex gap-2 flex-wrap mt-2">
             {product.colors?.map((color, idx) => (
               <button
                 key={idx}
                 onClick={() => {
                   setSelectedIndex(idx);
-                  setSelectGalleryIndex(-1); // dezaktywuj galerię
+                  setSelectGalleryIndex(-1);
                 }}
-                className={`w-5 h-5 rounded-full border ${idx === selectedIndex ? "ring-2 ring-black" : "border-gray-300"
-                  }`}
-                style={{ backgroundColor: (color as any).hex || "#ccc" }}
+                className={`w-5 h-5 rounded-full border ${idx === selectedIndex ? "ring-2 ring-black" : "border-gray-300"}`}
+                style={{ backgroundColor: color.hex || "#ccc" }}
                 title={color.name}
                 aria-label={`Farbe: ${color.name}`}
               />
@@ -83,9 +79,7 @@ export default function TileDetailPage({ params }: { params: { slug: string } })
           </div>
         </div>
 
-        {/* Opis i dane */}
         <div className="flex-1">
-          {/* Podtytuł i długi opis */}
           {product.details && (
             <>
               <h2 className="text-lg font-semibold text-gray-800 mb-2">
@@ -103,11 +97,9 @@ export default function TileDetailPage({ params }: { params: { slug: string } })
                   </li>
                 ))}
               </ul>
-              
             </>
           )}
-        
-          {/* Dane techniczne */}
+
           {product.specs && (
             <div className="mt-4">
               <h3 className="text-lg font-semibold mb-3 text-gray-800">Technische Daten</h3>
@@ -123,10 +115,9 @@ export default function TileDetailPage({ params }: { params: { slug: string } })
           )}
         </div>
       </div>
+
       <OdereForm productName={product.title} color={selectedColor?.name} />
       <Calc params={{ slug: params.slug }} />
-      
     </section>
   );
 }
-

@@ -11,15 +11,11 @@ const iconMap = {
   Zap: <Zap className="w-10 h-10 text-red-700" />,
 };
 
-type Params = { slug: string };
-
-export default function AusbildungDetail(props: { params: Params }) {
-  const { params } = props;
-
+export default function AusbildungDetail({ params }) {
   const ausbildung = datas.find((d) => d.slug === params.slug);
   if (!ausbildung) return notFound();
 
-  const icon = iconMap[ausbildung.icon as keyof typeof iconMap];
+  const icon = iconMap[ausbildung.icon];
 
   return (
     <section className="px-6 md:px-16 py-24">
@@ -59,10 +55,7 @@ export default function AusbildungDetail(props: { params: Params }) {
   );
 }
 
-// 🔧 TO JEST KLUCZ
-type StaticParams = { slug: string };
-
-export async function generateStaticParams(): Promise<StaticParams[]> {
+export async function generateStaticParams() {
   return datas.map((d) => ({
     slug: d.slug,
   }));
